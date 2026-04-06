@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700&display=swap');
+
+:root {
+  --navy: #2F4156;
+  --teal: #567C8D;
+  --sky-blue: #C8D9E6;
+  --beige: #F5EFEB;
+  --white: #FFFFFF;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Micro Depth Shadows */
+  --shadow-soft: 0 10px 30px rgba(47, 65, 86, 0.05);
+  --shadow-layered: 0 4px 6px -1px rgba(47, 65, 86, 0.05), 0 10px 15px -3px rgba(47, 65, 86, 0.1);
+  --shadow-hover: 0 20px 40px -5px rgba(47, 65, 86, 0.2);
+  
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--beige);
+  color: var(--navy);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+
+section {
+  padding: 8rem 2rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.bg-sky { background-color: var(--sky-blue); }
+.bg-white { background-color: var(--white); }
+
+.rounded-lg { border-radius: 12px; }
+.rounded-xl { border-radius: 24px; }
+.shadow-soft { box-shadow: var(--shadow-soft); }
+
+/* Buttons & Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* NAV LINK ANIMATION */
+header nav a, .footer-link, .link-teal {
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+header nav a::after, .footer-link::after, .link-teal::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--teal);
+  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+header nav a:hover::after, .footer-link:hover::after, .link-teal:hover::after {
+  width: 100%;
+}
+
+header nav a:hover, .footer-link:hover, .link-teal:hover {
+  color: var(--teal);
+}
+
+/* Navbar style is now managed in component for precise layout control */
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+/* Work Grid */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.work-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-layered);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(47, 65, 86, 0.03);
+}
+
+.work-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image-wrapper {
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.08); /* slight image zoom on hover */
+}
+
+/* Background Depth Animations (Slow float) */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.3;
+}
+
+@media (max-width: 991px) {
+  .work-grid { grid-template-columns: 1fr; }
+  nav { padding: 1.5rem 2rem; }
+  .nav-links { gap: 2rem; }
+}
+
+.work-on-card {
+  background: var(--white);
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(47, 65, 86, 0.04);
+  border: 1px solid rgba(47, 65, 86, 0.03);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.explore-pill {
+  background: var(--white);
+  border: 1px solid var(--teal);
+  color: var(--navy);
+  border-radius: 999px;
+  padding: 10px 24px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: default;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(47, 65, 86, 0.03);
+}
+
+.explore-pill:hover {
+  background: var(--teal);
+  color: var(--white);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(47, 65, 86, 0.1);
+}
