@@ -161,7 +161,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT I WORK ON SECTION */}
+      {/* WHAT I WORK ON SECTION [Cinematic Reveal] */}
       <section className="what-i-do reveal-section" style={{ padding: '15rem 6vw', background: 'var(--white)' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div className="reveal-item" style={{ marginBottom: '5rem' }}>
