@@ -211,6 +211,21 @@ export default function Work() {
               <h2 style={{ fontSize: '3rem', color: 'var(--navy)', marginTop: '0.5rem' }}>{selected.title}</h2>
             </div>
 
+            {/* PROJECT IMAGE IN MODAL */}
+            <div 
+              style={{ 
+                width: '100%', 
+                aspectRatio: '16/7', 
+                background: selected.color || 'var(--beige)', 
+                backgroundImage: selected.image ? `url(${selected.image})` : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '16px',
+                marginBottom: '4rem',
+                boxShadow: 'var(--shadow-layered)'
+              }} 
+            />
+
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '4rem' }}>
               <div>
                 <h5 className="technical" style={{ color: 'var(--navy)', marginBottom: '1rem', opacity: 0.8 }}>OVERVIEW</h5>
