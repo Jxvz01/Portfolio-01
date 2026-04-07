@@ -146,7 +146,8 @@ export default function Home() {
               filter: 'grayscale(0.1)',
               transition: 'all 0.8s cubic-bezier(0.23, 1, 0.32, 1)',
               boxShadow: 'var(--shadow-layered)',
-              zIndex: 10
+              zIndex: 10,
+              willChange: 'transform'
             }} 
             onMouseOver={(e) => {
               e.currentTarget.style.filter = 'grayscale(0)';
