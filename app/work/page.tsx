@@ -5,15 +5,15 @@ import PretextHeading from '@/components/PretextHeading';
 
 interface Project {
   title: string;
-  tag: string;
   desc: string;
   description?: string; // Add optional description for sheet data
-  year: string;
   overview: string;
   features: string[];
   stack: string[];
   github: string;
   live: string;
+  tag?: string;
+  year?: string;
   color?: string;
   image?: string;
 }
@@ -21,9 +21,7 @@ interface Project {
 const projects: Project[] = [
   { 
     title: 'ANONYMOUS REPORTING PLATFORM', 
-    tag: 'SYSTEMS DESIGN', 
     desc: 'A secure, encrypted platform designed for whistleblower protection and institutional accountability with zero-knowledge architecture.',
-    year: '2025',
     overview: 'This project focuses on the intersection of security and usability. I built a zero-knowledge architecture where safety and accessibility are perfectly balanced, allowing users to report incidents without any risk of metadata leaks.',
     features: ['End-to-end encryption for all reports', 'Anonymity-first authentication systems', 'Encrypted reporting pipelines with metadata stripping'],
     stack: ['Next.js', 'Supabase', 'GSAP', 'React'],
@@ -34,9 +32,7 @@ const projects: Project[] = [
   },
   { 
     title: 'UNDERRATED MYSORE', 
-    tag: 'PRODUCT DESIGN', 
     desc: 'A curated exploration of local culture and hidden landmarks, built to highlight the authentic spirit of the city and its community.',
-    year: '2024',
     overview: 'Designed to bridge the gap between tourism and authentic local experience, this platform highlights hidden gems that are often overlooked by standard travel guides.',
     features: ['Cultural landmarks tracking system', 'Curated community insights database', 'Responsive interactive map integration'],
     stack: ['React', 'Framer Motion', 'Leaflet', 'Node.js'],
@@ -47,9 +43,7 @@ const projects: Project[] = [
   },
   { 
     title: 'COMING SOON...', 
-    tag: 'FUTURE SYSTEMS', 
     desc: 'Currently researching and architecting the next era of value-driven products.',
-    year: '2026',
     overview: 'Strategic exploration into the next evolution of AI and product architecture. More details will be revealed upon prototype completion.',
     features: ['Deep architecture research', 'Stealth mode development', 'Market-driven prototyping'],
     stack: ['TBD'],
@@ -165,10 +159,7 @@ export default function Work() {
               >
                 {!p.image && <span className="technical" style={{ opacity: 0.3 }}>PROJECT {i+1}</span>}
               </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                <span className="technical" style={{ color: 'var(--teal)' }}>{p.tag || 'SYSTEMS'}</span>
-                <span className="technical" style={{ opacity: 0.5 }}>{p.year || '2025'}</span>
-              </div>
+              {/* METADATA STRIP REMOVED */}
               <h4 style={{ fontSize: '1.8rem', marginTop: '1rem', color: 'var(--navy)', letterSpacing: '-0.02em' }}>{p.title}</h4>
               <p style={{ color: '#567C8D', marginTop: '1.5rem', fontSize: '1rem', lineHeight: '1.6' }}>{p.desc}</p>
             </div>
@@ -207,7 +198,6 @@ export default function Work() {
             </button>
 
             <div style={{ marginBottom: '3rem' }}>
-              <span className="technical" style={{ color: 'var(--teal)', fontSize: '0.8rem' }}>{selected.tag} / {selected.year}</span>
               <h2 style={{ fontSize: '3rem', color: 'var(--navy)', marginTop: '0.5rem' }}>{selected.title}</h2>
             </div>
 
