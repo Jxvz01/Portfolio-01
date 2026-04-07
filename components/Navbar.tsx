@@ -18,7 +18,7 @@ export default function Navbar() {
       {
         y: 0,
         autoAlpha: 1,
-        duration: 0.6,
+        duration: 0.8,
         ease: "power3.out",
         scrollTrigger: {
           trigger: "body",
