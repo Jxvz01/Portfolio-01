@@ -238,8 +238,8 @@ export default function Work() {
                 <div style={{ marginTop: '4rem' }}>
                   <h5 className="technical" style={{ color: 'var(--navy)', marginBottom: '1.5rem' }}>LINKS</h5>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    <a href={selected.github} target="_blank" rel="noreferrer" className="link-teal" style={{ fontWeight: 700 }}>GITHUB REPOSITORY</a>
-                    <a href={selected.live} target="_blank" rel="noreferrer" className="link-teal" style={{ fontWeight: 700 }}>LIVE WEBSITE</a>
+                    <a href={selected.github} target="_blank" rel="noreferrer" className="link-teal" style={{ fontWeight: 700 }}>GITHUB REPOSITORY [EXTERNAL]</a>
+                    <a href={selected.live} target="_blank" rel="noreferrer" className="link-teal" style={{ fontWeight: 700 }}>LIVE WEBSITE [EXTERNAL]</a>
                   </div>
                 </div>
               </div>
