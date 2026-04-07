@@ -92,12 +92,14 @@ export default function Home() {
       title: 'ANONYMOUS REPORTING PLATFORM', 
       tag: 'SYSTEMS DESIGN', 
       desc: 'A secure, encrypted platform designed for whistleblower protection and institutional accountability.', 
-      color: 'var(--beige)' 
+      color: 'var(--beige)',
+      image: '/anonymous-reporting.png'
     },
     { 
       title: 'UNDERRATED MYSORE', 
       desc: 'A curated exploration of local culture and hidden landmarks, highlighting the authentic spirit of the city.', 
-      color: 'var(--sky-blue)' 
+      color: 'var(--sky-blue)',
+      image: '/underrated-mysore.png'
     }
   ];
 
@@ -215,11 +217,17 @@ export default function Home() {
               <div key={i} className="work-card reveal-item" style={{ padding: '0', border: 'none', background: 'transparent', boxShadow: 'none' }}>
                 <div className="card-image-wrapper" style={{ 
                   borderRadius: '24px', position: 'relative', aspectRatio: '16/10', overflow: 'hidden', 
-                  backgroundColor: p.color || 'var(--beige)', boxShadow: 'var(--shadow-layered)' 
+                  backgroundColor: p.color || 'var(--beige)', boxShadow: 'var(--shadow-layered)',
+                  backgroundImage: p.image ? `url(${p.image})` : 'none',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  transition: 'transform 0.5s ease',
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
-                    <span className="technical" style={{ opacity: 0.2 }}>PROJECT {i+1}</span>
-                  </div>
+                  {!p.image && (
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                      <span className="technical" style={{ opacity: 0.2 }}>PROJECT {i+1}</span>
+                    </div>
+                  )}
                 </div>
                 <div style={{ padding: '2rem 1rem' }}>
                   <h4 style={{ fontSize: '2rem', color: 'var(--navy)', fontWeight: 700 }}>{p.title}</h4>
