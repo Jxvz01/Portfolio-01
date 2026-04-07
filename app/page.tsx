@@ -90,7 +90,6 @@ export default function Home() {
   const staticProjects = [
     { 
       title: 'ANONYMOUS REPORTING PLATFORM', 
-      tag: 'SYSTEMS DESIGN', 
       desc: 'A secure, encrypted platform designed for whistleblower protection and institutional accountability.', 
       color: 'var(--beige)',
       image: '/anonymous-reporting.png'
