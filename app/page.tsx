@@ -193,7 +193,7 @@ export default function Home() {
       <section className="philosophy-section reveal-section" style={{ padding: '15rem 6vw', background: 'rgba(200, 217, 230, 0.25)', display: 'flex', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }} className="reveal-item">
           <h3 style={{ fontSize: '4.5rem', fontWeight: 400, color: 'var(--navy)', lineHeight: '1.2' }}>
-            “Clean thinking leads to clean systems.”
+            “I don't compete, I outbuild.”
           </h3>
         </div>
       </section>
