@@ -1,8 +1,9 @@
-'use client';
-
-import React, { useLayoutEffect, useState, useRef } from 'react';
-import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext';
-
+/**
+ * PretextHeading Component
+ * Uses @chenglou/pretext for high-end typography rendering on canvas.
+ * This ensures pixel-perfect text layout and linespacing that remains
+ * consistent across different browsers and DPI settings.
+ */
 interface PretextHeadingProps {
   text: string;
   font: string; // e.g. "700 80px Playfair Display"
