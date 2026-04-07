@@ -1,3 +1,8 @@
+'use client';
+
+import React, { useLayoutEffect, useRef } from 'react';
+import { prepareWithSegments, layoutWithLines } from '@chenglou/pretext';
+
 /**
  * PretextHeading Component
  * Uses @chenglou/pretext for high-end typography rendering on canvas.
